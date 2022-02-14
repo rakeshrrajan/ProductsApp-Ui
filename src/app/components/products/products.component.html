@@ -1,0 +1,28 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">       
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3">
+                <img src="https://www.cyclooil.com/images/default_product.png" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> Rs.{{item.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Select</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+<ng-container *ngIf="productList == null || productList == undefined || productList.length ==0">
+    <div class="container">
+        
+        <div class="center">
+            <h6>Sorry, Product List is empty !!!</h6>            
+        </div>
+    </div>
+</ng-container>
